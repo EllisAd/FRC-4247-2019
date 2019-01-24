@@ -13,7 +13,7 @@ public class DriveTrain extends Subsystem {
 
     public void set(double leftMotorOutput, double rightMotorOutput) {
         leftMotor.set(ControlMode.PercentOutput, leftMotorOutput);
-        rightMotor.set(ControlMode.PercentOutput, rightMotorOutput);
+        rightMotor.set(ControlMode.PercentOutput, -rightMotorOutput);
     }
 
     @Override

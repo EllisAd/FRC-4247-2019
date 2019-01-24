@@ -22,8 +22,7 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  private final Joystick leftStick = new Joystick(RobotMap.LEFT_JOY_PORT);
-  private final Joystick rightStick = new Joystick(RobotMap.RIGHT_JOY_PORT);
+  private final Joystick joystick = new Joystick(RobotMap.JOYSTICK);
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -46,10 +45,10 @@ public class OI {
   // button.whenReleased(new ExampleCommand());
 
   public double getLeftJoyY() {
-    return leftStick.getY();
+    return joystick.getRawAxis(RobotMap.JOYSTICK_LEFT_UP_AXIS);
   }
 
   public double getRightJoyY() {
-    return rightStick.getY();
+    return joystick.getRawAxis(RobotMap.JOYSTICK_RIGHT_UP_AXIS);
   }
 }

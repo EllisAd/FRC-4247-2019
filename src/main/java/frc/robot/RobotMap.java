@@ -27,14 +27,16 @@ public class RobotMap {
 
 
   // Joysticks
-  public static int LEFT_JOY_PORT = 1;
-  public static int RIGHT_JOY_PORT = 2;
+  public static int JOYSTICK = 0;
+
+  public static int JOYSTICK_LEFT_UP_AXIS = 1;
+  public static int JOYSTICK_RIGHT_UP_AXIS = 3;
 
   // Buttons
 
   // Motor ports
-  public static final int LEFT_MOTOR_CANBUS_PORT = 0;
-  public static final int RIGHT_MOTOR_CANBUS_PORT = 1;
+  public static final int LEFT_MOTOR_CANBUS_PORT = 1;
+  public static final int RIGHT_MOTOR_CANBUS_PORT = 2;
 
   // Sensor ports
 

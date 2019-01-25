@@ -14,8 +14,8 @@ public class TankDrive extends Command {
 	}
 
 	protected void execute() {
-        Robot.m_driveTrain.set(Robot.m_oi.getLeftJoyY(), 
-            Robot.m_oi.getRightJoyY());
+        Robot.m_driveTrain.set(-Robot.m_oi.getLeftJoyY(), 
+            -Robot.m_oi.getRightJoyY());
 	}
 
 	protected boolean isFinished() {

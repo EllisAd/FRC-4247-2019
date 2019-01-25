@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.auto.AutoCommand;
+import frc.robot.commands.drive.TankDrive;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Manipulator;
 
@@ -31,6 +32,10 @@ public class Robot extends TimedRobot {
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
+
+  // Current command chains
+  Command m_driveCommand;
+  // TODO Command chains for other stuff!
 
   /**
    * This function is run when the robot is first started up and should be
@@ -115,6 +120,10 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+
+    // Set up initial commands
+    m_driveCommand = new TankDrive();
+    m_driveCommand.start();
   }
 
   /**

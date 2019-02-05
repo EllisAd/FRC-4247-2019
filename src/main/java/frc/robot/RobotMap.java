@@ -38,7 +38,20 @@ public class RobotMap {
   public static final int LEFT_MOTOR_CANBUS_PORT = 1;
   public static final int RIGHT_MOTOR_CANBUS_PORT = 2;
 
+  public static final int RAISE_MOTOR_CANBUS_PORT = 3;
+  public static final int EXTEND_MOTOR_CANBUS_PORT = 4;
+  public static final int PITCH_MOTOR_CANBUS_PORT = 5;
+  public static final int OPEN_MOTOR_CANBUS_PORT = 6; // TODO Use pneumatics instead?
+  public static final int SHOOTER_MOTOR_CANBUS_PORT = 7;
+
   // Sensor ports
+  public static final int RAISE_MIN_SWITCH_INPUT = 0;
+  public static final int RAISE_MAX_SWITCH_INPUT = 1;
+  public static final int EXTEND_MIN_SWITCH_INPUT = 2;
+  public static final int EXTEND_MAX_SWITCH_INPUT = 3;
+  public static final int PITCH_MIN_SWITCH_INPUT = 4;
+  public static final int PITCH_MAX_SWITCH_INPUT = 5;
+  // public static final int PITCH_DEFAULT_SWITCH_INPUT = 6;
 
   // Camera connection info
 

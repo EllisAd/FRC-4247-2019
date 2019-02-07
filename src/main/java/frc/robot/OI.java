@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -22,7 +24,22 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
+  //Joystick Setup
   private final Joystick joystick = new Joystick(RobotMap.JOYSTICK);
+
+  //Button Setup
+  private final Button buttonX = new JoystickButton(joystick, RobotMap.BUTTON_X);
+  private final Button buttonY = new JoystickButton(joystick, RobotMap.BUTTON_Y);
+  private final Button buttonA = new JoystickButton(joystick, RobotMap.BUTTON_A);
+  private final Button buttonB = new JoystickButton(joystick, RobotMap.BUTTON_B);
+  private final Button leftBumper = new JoystickButton(joystick, RobotMap.BUMPER_LEFT);
+  private final Button rightBumper = new JoystickButton(joystick, RobotMap.BUMPER_RIGHT);
+  private final Button rightTrigger = new JoystickButton(joystick, RobotMap.TRIGGER_RIGHT_PULL);
+  private final Button leftTrigger = new JoystickButton(joystick, RobotMap.TRIGGER_LEFT_PULL);
+
+  //POV Setup
+
+
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -44,11 +61,29 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
 
+  // Joystick Control
+
   public double getLeftJoyY() {
     return joystick.getRawAxis(RobotMap.JOYSTICK_LEFT_UP_AXIS);
   }
 
   public double getRightJoyY() {
     return joystick.getRawAxis(RobotMap.JOYSTICK_RIGHT_UP_AXIS);
+  }
+
+  //Buttons on Commands
+  public OI () {
+    buttonB.whileHeld(new LowerPanelGrabber());
+    buttonB.whenReleased(new RaisePanelGrabber());
+
+    buttonA.whileHeld(new ShootBall());
+    leftBumper.whileHeld(new IntakeBall());
+
+    rightTrigger.whileHeld(new RaisePivot());
+    leftTrigger.whileHeld(new LowerPivot());
+
+    rightBumper.whileHeld(new OpenClaw());
+
+
   }
 }

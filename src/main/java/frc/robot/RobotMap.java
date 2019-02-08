@@ -43,13 +43,13 @@ public class RobotMap {
   public static final int BUMPER_LEFT = 4;
   
   //Triggers
-  public static int TRIGGER_RIGHT_PULL = 7;
-  public static int TRIGGER_LEFT_PULL = 6;
+  public static final int TRIGGER_RIGHT_PULL = 7;
+  public static final int TRIGGER_LEFT_PULL = 6;
   
   //POVs
-
-  
-
+  public static final int DPAD = 0;
+  public static final int DPAD_UP = 0;
+  public static final int DPAD_DOWN = 180;
 
   // Motor ports
   public static final int LEFT_MOTOR_CANBUS_PORT = 1;

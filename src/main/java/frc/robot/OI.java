@@ -10,6 +10,14 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.manipulator.IntakeBall;
+import frc.robot.commands.manipulator.LowerPanelGrabber;
+import frc.robot.commands.manipulator.LowerPivot;
+import frc.robot.commands.manipulator.OpenClaw;
+import frc.robot.commands.manipulator.RaisePanelGrabber;
+import frc.robot.commands.manipulator.RaisePivot;
+import frc.robot.commands.manipulator.ShootBall;
+import frc.robot.subsystems.helpers.JoystickAnalogTrigger;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -34,8 +42,8 @@ public class OI {
   private final Button buttonB = new JoystickButton(joystick, RobotMap.BUTTON_B);
   private final Button leftBumper = new JoystickButton(joystick, RobotMap.BUMPER_LEFT);
   private final Button rightBumper = new JoystickButton(joystick, RobotMap.BUMPER_RIGHT);
-  private final Button rightTrigger = new JoystickButton(joystick, RobotMap.TRIGGER_RIGHT_PULL);
-  private final Button leftTrigger = new JoystickButton(joystick, RobotMap.TRIGGER_LEFT_PULL);
+  private final Button rightTrigger = new JoystickAnalogTrigger(joystick, RobotMap.TRIGGER_RIGHT_PULL, 0.1, 1.0);
+  private final Button leftTrigger = new JoystickAnalogTrigger(joystick, RobotMap.TRIGGER_LEFT_PULL, 0.1, 1.0);
 
   //POV Setup
 
@@ -71,6 +79,14 @@ public class OI {
     return joystick.getRawAxis(RobotMap.JOYSTICK_RIGHT_UP_AXIS);
   }
 
+  public double getLeftTrigger() {
+    return joystick.getRawAxis(RobotMap.TRIGGER_LEFT_PULL);
+  }
+
+  public double getRightTrigger() {
+    return joystick.getRawAxis(RobotMap.TRIGGER_RIGHT_PULL);
+  }
+
   //Buttons on Commands
   public OI () {
     buttonB.whileHeld(new LowerPanelGrabber());
@@ -83,7 +99,5 @@ public class OI {
     leftTrigger.whileHeld(new LowerPivot());
 
     rightBumper.whileHeld(new OpenClaw());
-
-
   }
 }

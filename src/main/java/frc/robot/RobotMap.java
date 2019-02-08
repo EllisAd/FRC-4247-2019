@@ -30,26 +30,23 @@ public class RobotMap {
   public static int JOYSTICK = 0;
 
   public static int JOYSTICK_LEFT_UP_AXIS = 1;
-  public static int JOYSTICK_RIGHT_UP_AXIS = 3;
+  public static int JOYSTICK_RIGHT_UP_AXIS = 5;
 
   // Buttons
-  public static final int BUTTON_X = 0;
+  public static final int BUTTON_X = 2;
 	public static final int BUTTON_Y = 3;
-	public static final int BUTTON_A = 1;
-	public static final int BUTTON_B = 2;
-	public static final int BUTTON_START = 9;
-	public static final int BUTTON_BACK = 8;
-	public static final int BUMPER_RIGHT = 5;
-  public static final int BUMPER_LEFT = 4;
+	public static final int BUTTON_A = 0;
+	public static final int BUTTON_B = 1;
+	public static final int BUMPER_RIGHT = 4;
+  public static final int BUMPER_LEFT = 5;
   
   //Triggers
-  public static int TRIGGER_RIGHT_PULL = 7;
-  public static int TRIGGER_LEFT_PULL = 6;
+  public static int TRIGGER_RIGHT_PULL = 3;
+  public static int TRIGGER_LEFT_PULL = 2;
   
   //POVs
 
   
-
 
   // Motor ports
   public static final int LEFT_MOTOR_CANBUS_PORT = 1;

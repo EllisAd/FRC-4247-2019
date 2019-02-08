@@ -34,12 +34,10 @@ public class OI {
   private final Button buttonB = new JoystickButton(joystick, RobotMap.BUTTON_B);
   private final Button leftBumper = new JoystickButton(joystick, RobotMap.BUMPER_LEFT);
   private final Button rightBumper = new JoystickButton(joystick, RobotMap.BUMPER_RIGHT);
-  private final Button rightTrigger = new JoystickButton(joystick, RobotMap.TRIGGER_RIGHT_PULL);
-  private final Button leftTrigger = new JoystickButton(joystick, RobotMap.TRIGGER_LEFT_PULL);
-
+  
   //POV Setup
-
-
+  private final Button upperPOV = new JoystickPOV(joystick, RobotMap.DPAD, RobotMap.DPAD_UP);
+  private final Button lowerPOV = new JoystickPOV(joystick, RobotMap.DPAD, RobotMap.DPAD_DOWN);
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to

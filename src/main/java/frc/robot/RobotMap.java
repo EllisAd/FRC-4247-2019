@@ -50,6 +50,7 @@ public class RobotMap {
   public static final int DPAD_DOWN = 180;
 
   // Motor ports
+  // TODO Update to new robot layout!
   public static final int LEFT_MOTOR_CANBUS_PORT = 1;
   public static final int RIGHT_MOTOR_CANBUS_PORT = 2;
 
@@ -60,6 +61,7 @@ public class RobotMap {
   public static final int SHOOTER_MOTOR_CANBUS_PORT = 7;
 
   // Sensor ports
+  // TODO Update to new robot layout!
   public static final int RAISE_MIN_SWITCH_INPUT = 0;
   public static final int RAISE_MAX_SWITCH_INPUT = 1;
   public static final int EXTEND_MIN_SWITCH_INPUT = 2;
@@ -69,6 +71,8 @@ public class RobotMap {
   // public static final int PITCH_DEFAULT_SWITCH_INPUT = 6;
 
   // Camera connection info
+
+  // TODO Pneumatics!
 
   // Etc.
 }

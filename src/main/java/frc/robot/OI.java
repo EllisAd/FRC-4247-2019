@@ -11,13 +11,16 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.manipulator.IntakeBall;
+import frc.robot.commands.manipulator.LowerElevator;
 import frc.robot.commands.manipulator.LowerPanelGrabber;
 import frc.robot.commands.manipulator.LowerPivot;
 import frc.robot.commands.manipulator.OpenClaw;
+import frc.robot.commands.manipulator.RaiseElevator;
 import frc.robot.commands.manipulator.RaisePanelGrabber;
 import frc.robot.commands.manipulator.RaisePivot;
 import frc.robot.commands.manipulator.ShootBall;
 import frc.robot.subsystems.helpers.JoystickAnalogTrigger;
+import frc.robot.subsystems.helpers.JoystickPOV;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -46,8 +49,8 @@ public class OI {
   private final Button leftTrigger = new JoystickAnalogTrigger(joystick, RobotMap.TRIGGER_LEFT_PULL, 0.1, 1.0);
 
   //POV Setup
-
-
+  private final Button upperPOV = new JoystickPOV(joystick, RobotMap.DPAD, RobotMap.DPAD_UP);
+  private final Button lowerPOV = new JoystickPOV(joystick, RobotMap.DPAD, RobotMap.DPAD_DOWN);
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -99,5 +102,8 @@ public class OI {
     leftTrigger.whileHeld(new LowerPivot());
 
     rightBumper.whileHeld(new OpenClaw());
+
+    upperPOV.whileHeld(new RaiseElevator());
+    lowerPOV.whileHeld(new LowerElevator());
   }
 }

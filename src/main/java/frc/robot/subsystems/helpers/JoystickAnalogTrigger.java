@@ -9,6 +9,13 @@ public class JoystickAnalogTrigger extends Button {
     private final double m_minValue; // 0.1
     private final double m_maxValue; // 1.0
 
+    /**
+     * Configures a trigger-able 
+     * @param joystick
+     * @param axis
+     * @param minValue
+     * @param maxValue
+     */
     public JoystickAnalogTrigger(GenericHID joystick,
         int axis,
         double minValue,

@@ -14,7 +14,6 @@ import frc.robot.commands.manipulator.IntakeBall;
 import frc.robot.commands.manipulator.LowerElevator;
 import frc.robot.commands.manipulator.LowerPanelGrabber;
 import frc.robot.commands.manipulator.LowerPivot;
-import frc.robot.commands.manipulator.OpenClaw;
 import frc.robot.commands.manipulator.RaiseElevator;
 import frc.robot.commands.manipulator.RaisePanelGrabber;
 import frc.robot.commands.manipulator.RaisePivot;
@@ -95,13 +94,11 @@ public class OI {
     buttonB.whileHeld(new LowerPanelGrabber());
     buttonB.whenReleased(new RaisePanelGrabber());
 
-    buttonA.whileHeld(new ShootBall());
+    rightBumper.whileHeld(new ShootBall());
     leftBumper.whileHeld(new IntakeBall());
 
     rightTrigger.whileHeld(new RaisePivot());
     leftTrigger.whileHeld(new LowerPivot());
-
-    rightBumper.whileHeld(new OpenClaw());
 
     upperPOV.whileHeld(new RaiseElevator());
     lowerPOV.whileHeld(new LowerElevator());

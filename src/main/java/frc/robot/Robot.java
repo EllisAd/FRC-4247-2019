@@ -15,7 +15,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.auto.AutoCommand;
 import frc.robot.commands.drive.TankDrive;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.Manipulator;
+import frc.robot.subsystems.Elevator;
+import frc.robot.subsystems.PanelGrabber;
+import frc.robot.subsystems.Shooter;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,7 +28,9 @@ import frc.robot.subsystems.Manipulator;
  */
 public class Robot extends TimedRobot {
   public static DriveTrain m_driveTrain = new DriveTrain();
-  public static Manipulator m_manipulator = new Manipulator();
+  public static Elevator m_elevator = new Elevator();
+  public static PanelGrabber m_panelGrabber = new PanelGrabber();
+  public static Shooter m_shooter = new Shooter();
 
   public static OI m_oi;
 

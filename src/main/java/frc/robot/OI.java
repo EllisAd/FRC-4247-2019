@@ -91,8 +91,13 @@ public class OI {
 
   //Buttons on Commands
   public OI () {
+    // Once we have limit switches for this, we can use these hooks
+    // buttonB.whileHeld(new LowerPanelGrabber());
+    // buttonB.whenReleased(new RaisePanelGrabber());
+
+    // Until then, we manually position the grabber
     buttonB.whileHeld(new LowerPanelGrabber());
-    buttonB.whenReleased(new RaisePanelGrabber());
+    buttonA.whileHeld(new RaisePanelGrabber());
 
     rightBumper.whileHeld(new ShootBall());
     leftBumper.whileHeld(new IntakeBall());

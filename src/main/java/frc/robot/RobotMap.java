@@ -58,10 +58,9 @@ public class RobotMap {
   public static final int EXTRA_MOTOR_CANBUS_PORT = 6;
 
   // Sensor ports (TODO Add these!)
-  public static final int RAISE_MIN_SWITCH_INPUT = 0;
-  public static final int RAISE_MAX_SWITCH_INPUT = 1;
-  public static final int PITCH_MIN_SWITCH_INPUT = 2;
-  public static final int PITCH_MAX_SWITCH_INPUT = 3;
+  public static final int PANEL_GRABBER_HIGH_SWITCH_PORT = 0;
+  public static final int PANEL_GRABBER_LOW_SWITCH_PORT = 1;
+  
 
   // Camera connection info
 

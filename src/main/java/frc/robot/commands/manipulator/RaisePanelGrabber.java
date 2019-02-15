@@ -1,32 +1,27 @@
 package frc.robot.commands.manipulator;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-// TODO Get these to work properly!
 public class RaisePanelGrabber extends Command {
-
-    private Timer timer = new Timer();
 
     public RaisePanelGrabber() {
         requires(Robot.m_panelGrabber);
     }
 
-    protected void initialize() {
-        timer.reset();
-    }
+    protected void initialize() {}
 
     protected void execute() {
-        Robot.m_panelGrabber.setMotorSpeed(-10.0);
+        Robot.m_panelGrabber.raise();
     }
 
     @Override
     protected boolean isFinished() {
-        return true;
+        return Robot.m_panelGrabber.isFullyRaised();
     }
 
     protected void interrupt() {
+        Robot.m_panelGrabber.stop();
         end();
     }
 

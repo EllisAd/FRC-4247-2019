@@ -25,7 +25,6 @@ public class LowerPanelGrabber extends Command {
     }
 
     protected void interrupted() {
-        System.out.println("LowerPanelGrabber interrupted");
         Robot.m_panelGrabber.stop();
         end();
     }

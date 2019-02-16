@@ -11,4 +11,14 @@ public class Utils {
         }
         return value;
     }
+
+	public static double linearMap(double input, double inLow, double inHigh, double outLow, double outHigh) {
+        // If the low and high values are the same, assume low.
+        if (inLow == inHigh) {
+            return outLow;
+        }
+
+        // Calculate the percentage, scale up, and apply the offset
+        return (((input - inLow) / (inHigh - inLow)) * (outHigh - outLow)) + outLow;
+	}
 }

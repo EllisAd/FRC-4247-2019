@@ -14,9 +14,6 @@ public class Shooter extends Subsystem {
 
     private final TalonSRX shooterMotor = new TalonSRX(RobotMap.SHOOTER_CANBUS_PORT);
 
-    @Override
-    protected void initDefaultCommand() {}
-
     public void shoot() {
         shooterMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
     }
@@ -28,4 +25,7 @@ public class Shooter extends Subsystem {
     public void intake() {
         shooterMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
     }
+
+    @Override
+    protected void initDefaultCommand() {}
 }

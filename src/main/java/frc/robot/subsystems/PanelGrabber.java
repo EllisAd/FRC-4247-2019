@@ -10,8 +10,8 @@ import frc.robot.RobotMap;
 
 public class PanelGrabber extends Subsystem {
 
-    private static final double RAISE_SPEED = 100.0;
-    private static final double LOWER_SPEED = -100.0;
+    private static final double RAISE_SPEED = -0.6;
+    private static final double LOWER_SPEED = 0.6;
     private static final double IDLE_SPEED = 0.0;
 
     private final TalonSRX motor = new TalonSRX(RobotMap.PANEL_GRABBER_CANBUS_PORT);
@@ -39,9 +39,6 @@ public class PanelGrabber extends Subsystem {
         this.motor.set(ControlMode.PercentOutput, IDLE_SPEED);
     }
     
-    @Override
-    protected void initDefaultCommand() {}
-
     // TODO Set up limit switches!
 	public boolean isFullyRaised() {
         return false;
@@ -52,4 +49,7 @@ public class PanelGrabber extends Subsystem {
         return false;
         // return loweredSwitch.get();
     }
+
+    @Override
+    protected void initDefaultCommand() {}
 }

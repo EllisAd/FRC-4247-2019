@@ -26,7 +26,6 @@ public class RaisePanelGrabber extends Command {
 
     @Override
     protected void interrupted() {
-        System.out.println("RaisePanelGrabber interrupted");
         Robot.m_panelGrabber.stop();
         end();
     }

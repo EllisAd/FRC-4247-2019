@@ -13,10 +13,10 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.manipulator.IntakeBall;
 import frc.robot.commands.manipulator.LowerElevator;
 import frc.robot.commands.manipulator.LowerPanelGrabber;
-import frc.robot.commands.manipulator.LowerPivot;
+import frc.robot.commands.manipulator.PullPivotBackward;
+import frc.robot.commands.manipulator.PushPivotForward;
 import frc.robot.commands.manipulator.RaiseElevator;
 import frc.robot.commands.manipulator.RaisePanelGrabber;
-import frc.robot.commands.manipulator.RaisePivot;
 import frc.robot.commands.manipulator.ShootBall;
 import frc.robot.subsystems.helpers.JoystickAnalogTrigger;
 import frc.robot.subsystems.helpers.JoystickPOV;
@@ -38,8 +38,8 @@ public class OI {
   private final Joystick joystick = new Joystick(RobotMap.JOYSTICK);
 
   //Button Setup
-  private final Button buttonX = new JoystickButton(joystick, RobotMap.BUTTON_X);
-  private final Button buttonY = new JoystickButton(joystick, RobotMap.BUTTON_Y);
+  // private final Button buttonX = new JoystickButton(joystick, RobotMap.BUTTON_X);
+  // private final Button buttonY = new JoystickButton(joystick, RobotMap.BUTTON_Y);
   private final Button buttonA = new JoystickButton(joystick, RobotMap.BUTTON_A);
   private final Button buttonB = new JoystickButton(joystick, RobotMap.BUTTON_B);
   private final Button leftBumper = new JoystickButton(joystick, RobotMap.BUMPER_LEFT);
@@ -96,16 +96,16 @@ public class OI {
     // buttonB.whenReleased(new RaisePanelGrabber());
 
     // Until then, we manually position the grabber
-    buttonB.whileHeld(new LowerPanelGrabber());
-    buttonA.whileHeld(new RaisePanelGrabber());
+    buttonA.whileHeld(new LowerPanelGrabber());
+    buttonB.whileHeld(new RaisePanelGrabber());
 
     rightBumper.whileHeld(new ShootBall());
     leftBumper.whileHeld(new IntakeBall());
 
-    rightTrigger.whileHeld(new RaisePivot());
-    leftTrigger.whileHeld(new LowerPivot());
+    upperPOV.whileHeld(new PushPivotForward());
+    lowerPOV.whileHeld(new PullPivotBackward());
 
-    upperPOV.whileHeld(new RaiseElevator());
-    lowerPOV.whileHeld(new LowerElevator());
+    rightTrigger.whileHeld(new RaiseElevator(this::getRightTrigger));
+    leftTrigger.whileHeld(new LowerElevator(this::getLeftTrigger));
   }
 }

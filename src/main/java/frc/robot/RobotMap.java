@@ -53,16 +53,15 @@ public class RobotMap {
   public static final int LEFT_MOTOR_CANBUS_PORT = 1;
   public static final int RIGHT_MOTOR_CANBUS_PORT = 2;
   public static final int PANEL_GRABBER_CANBUS_PORT = 3;
-  public static final int PIVOT_CANBUS_PORT = 4;
-  public static final int SHOOTER_CANBUS_PORT = 5;
-  public static final int EXTRA_MOTOR_CANBUS_PORT = 6;
+  public static final int ELEVATOR_CANBUS_PORT = 4;
+  public static final int PIVOT_CANBUS_PORT = 5;
+  public static final int SHOOTER_CANBUS_PORT = 6;
 
   // Sensor ports (TODO Add these!)
   public static final int PANEL_GRABBER_HIGH_SWITCH_PORT = 0;
   public static final int PANEL_GRABBER_LOW_SWITCH_PORT = 1;
-  
-
-  // Camera connection info
-
-  // Etc.
+  public static final int ELEVATOR_HIGH_SWITCH_PORT = 2;
+  public static final int ELEVATOR_LOW_SWITCH_PORT = 3;
+  public static final int PIVOT_FORWARD_SWITCH_PORT = 4;
+  public static final int PIVOT_BACKWARD_SWITCH_PORT = 5;
 }

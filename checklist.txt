@@ -1,0 +1,37 @@
+Precompetition Checklist
+
+Programming:
+- Program radio
+- Check firmware versions
+- Reimage/flash firmware as needed
+- Re-upload code
+- Check camera
+Wiring:
+- Check fuses
+- Check connections
+- Power all components
+Mechanics:
+- Check bolts
+- Check wheels
+- Check belts
+- Check hard stops
+- Move all components by hand
+Operations:
+- Drive test
+- Panel grabber test
+- Elevator test
+- Pivot test
+- Claw test
+- Drive practice
+
+Prematch Checklist
+
+- Charge laptop
+- Charge battery
+- Raise panel grabber
+- Pull back pivot
+- Lube elevator slide
+- Raise elevator
+- Tighten bolts on panel grabber/hard stops
+- Check driver station screen layout
+- Check screen connection

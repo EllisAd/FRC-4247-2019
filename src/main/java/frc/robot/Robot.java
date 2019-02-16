@@ -14,9 +14,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.auto.AutoCommand;
 import frc.robot.commands.drive.TankDrive;
+import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.PanelGrabber;
+import frc.robot.subsystems.Pivot;
 import frc.robot.subsystems.Shooter;
 
 /**
@@ -30,16 +32,14 @@ public class Robot extends TimedRobot {
   public static DriveTrain m_driveTrain = new DriveTrain();
   public static Elevator m_elevator = new Elevator();
   public static PanelGrabber m_panelGrabber = new PanelGrabber();
+  public static Pivot m_pivot = new Pivot();
   public static Shooter m_shooter = new Shooter();
+  public static Camera m_camera = new Camera();
 
   public static OI m_oi;
 
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
-
-  // Current command chains
-  Command m_driveCommand;
-  // TODO Command chains for other stuff!
 
   /**
    * This function is run when the robot is first started up and should be
@@ -124,10 +124,6 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-
-    // Set up initial commands
-    m_driveCommand = new TankDrive();
-    m_driveCommand.start();
   }
 
   /**

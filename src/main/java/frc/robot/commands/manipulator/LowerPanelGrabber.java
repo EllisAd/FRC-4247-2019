@@ -9,7 +9,10 @@ public class LowerPanelGrabber extends Command {
         requires(Robot.m_panelGrabber);
     }
 
-    protected void initialize() {}
+    protected void initialize() {
+        System.out.println("LowerPanelGrabber initializing");
+        Robot.m_panelGrabber.lower();
+    }
 
     protected void execute() {
         Robot.m_panelGrabber.lower();
@@ -17,10 +20,12 @@ public class LowerPanelGrabber extends Command {
 
     @Override
     protected boolean isFinished() {
-        return Robot.m_panelGrabber.isFullyLowered();
+        return false;
+        // return Robot.m_panelGrabber.isFullyLowered();
     }
 
-    protected void interrupt() {
+    protected void interrupted() {
+        System.out.println("LowerPanelGrabber interrupted");
         Robot.m_panelGrabber.stop();
         end();
     }

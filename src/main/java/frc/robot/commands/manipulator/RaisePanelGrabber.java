@@ -9,7 +9,10 @@ public class RaisePanelGrabber extends Command {
         requires(Robot.m_panelGrabber);
     }
 
-    protected void initialize() {}
+    protected void initialize() {
+        System.out.println("RaisePanelGrabber initializing");
+        Robot.m_panelGrabber.raise();
+    }
 
     protected void execute() {
         Robot.m_panelGrabber.raise();
@@ -17,10 +20,13 @@ public class RaisePanelGrabber extends Command {
 
     @Override
     protected boolean isFinished() {
-        return Robot.m_panelGrabber.isFullyRaised();
+        return false;
+        // return Robot.m_panelGrabber.isFullyRaised();
     }
 
-    protected void interrupt() {
+    @Override
+    protected void interrupted() {
+        System.out.println("RaisePanelGrabber interrupted");
         Robot.m_panelGrabber.stop();
         end();
     }

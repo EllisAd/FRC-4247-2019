@@ -10,7 +10,7 @@ public class RunCamera extends Command {
     }
 
     protected void initialize() {
-        Robot.m_camera.start(640, 480, 15);
+        Robot.m_camera.start(320, 240, 15);
     }
 
     @Override

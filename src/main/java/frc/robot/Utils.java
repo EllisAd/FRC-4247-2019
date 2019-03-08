@@ -20,5 +20,29 @@ public class Utils {
 
         // Calculate the percentage, scale up, and apply the offset
         return (((input - inLow) / (inHigh - inLow)) * (outHigh - outLow)) + outLow;
-	}
+    }
+    
+    /**
+     * Performs a P-control (rate limiter) on the given values.
+     * @param actual The previously output value, or the amount you last sent from this command.
+     * @param command The command value, or the amount you're aiming for.
+     * @param maxRate The proportional rate, or the maximum amount the output value is allowed to change per frame.
+     * @return The new output value.
+     */
+    public static double rateLimit(double actual, double command, double maxRate) {
+        maxRate = Math.abs(maxRate);
+
+        if (Math.abs(actual - command) < maxRate) {
+            return command;
+        }
+        
+        if (command > actual) {
+            return actual + maxRate;
+        } else if (command < actual) {
+            return actual - maxRate;
+        } else {
+            // Equal
+            return actual;
+        }
+    }
 }

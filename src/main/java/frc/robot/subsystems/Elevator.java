@@ -10,8 +10,8 @@ import frc.robot.Utils;
 
 public class Elevator extends Subsystem {
 
-    private static final double MAX_RAISE_SPEED = 1.0;
-    private static final double MAX_LOWER_SPEED = -1.0;
+    private static final double MAX_RAISE_SPEED = 0.4;
+    private static final double MAX_LOWER_SPEED = -0.4;
     private static final double HOLD_SPEED = 0.0;
 
     private static final double DELTA_RATE_LIMIT = 0.02;

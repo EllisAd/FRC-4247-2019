@@ -10,8 +10,8 @@ import frc.robot.RobotMap;
 
 public class Pivot extends Subsystem {
 
-    private static final double FORWARD_SPEED = 0.25;
-    private static final double BACKWARD_SPEED = -0.25;
+    private static final double FORWARD_SPEED = 0.85;
+    private static final double BACKWARD_SPEED = -0.85;
     private static final double IDLE_SPEED = 0.0;
 
     private final TalonSRX motor = new TalonSRX(RobotMap.PIVOT_CANBUS_PORT);

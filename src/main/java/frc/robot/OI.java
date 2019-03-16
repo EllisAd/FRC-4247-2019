@@ -77,6 +77,10 @@ public class OI {
     return joystick.getRawAxis(RobotMap.JOYSTICK_LEFT_UP_AXIS);
   }
 
+  public double getLeftJoyX() {
+    return joystick.getRawAxis(RobotMap.JOYSTICK_LEFT_SIDE_AXIS);
+  }
+
   public double getRightJoyY() {
     return joystick.getRawAxis(RobotMap.JOYSTICK_RIGHT_UP_AXIS);
   }

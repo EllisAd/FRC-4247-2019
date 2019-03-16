@@ -10,7 +10,7 @@ public class JoystickAnalogTrigger extends Button {
     private final double m_maxValue; // 1.0
 
     /**
-     * Configures a trigger-able 
+     * Configures a trigger-able joystick trigger
      * @param joystick
      * @param axis
      * @param minValue

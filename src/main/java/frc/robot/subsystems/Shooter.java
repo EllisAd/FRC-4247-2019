@@ -8,8 +8,8 @@ import frc.robot.RobotMap;
 
 public class Shooter extends Subsystem {
 
-    private static final double SHOOT_SPEED = 75.0;
-    private static final double INTAKE_SPEED = -45.0;
+    private static final double SHOOT_SPEED = 1.0;
+    private static final double INTAKE_SPEED = -1.0;
     private static final double IDLE_SPEED = 0.0;
 
     private final TalonSRX shooterMotor = new TalonSRX(RobotMap.SHOOTER_CANBUS_PORT);

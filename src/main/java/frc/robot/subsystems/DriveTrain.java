@@ -14,7 +14,7 @@ public class DriveTrain extends Subsystem {
     private final TalonSRX rightMotor = new TalonSRX(RobotMap.RIGHT_MOTOR_CANBUS_PORT);
 
     // Ramping factor, in percent output per update (20ms)
-    private final double MIN_DELTA = 0.05;
+    private final double MIN_DELTA = 0.01;
 
     private double prevLeftOutput = 0.0;
     private double prevRightOutput = 0.0;

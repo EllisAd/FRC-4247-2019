@@ -29,8 +29,9 @@ public class RobotMap {
   // Joysticks
   public static int JOYSTICK = 0;
 
+  public static int JOYSTICK_LEFT_SIDE_AXIS = 0;
   public static int JOYSTICK_LEFT_UP_AXIS = 1;
-  public static int JOYSTICK_LEFT_SIDE_AXIS = 2; // TESTME
+  public static int JOYSTICK_RIGHT_SIDE_AXIS = 4;
   public static int JOYSTICK_RIGHT_UP_AXIS = 5;
 
   // Buttons

@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.auto.AutoCommand;
 import frc.robot.commands.drive.TankDrive;
-import frc.robot.subsystems.Camera;
+import frc.robot.subsystems.Cameras;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.PanelGrabber;
@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
   public static PanelGrabber m_panelGrabber = new PanelGrabber();
   public static Pivot m_pivot = new Pivot();
   public static Shooter m_shooter = new Shooter();
-  public static Camera m_camera = new Camera();
+  public static Cameras m_cameras = new Cameras();
 
   public static OI m_oi;
 

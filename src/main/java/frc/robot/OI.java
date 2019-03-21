@@ -107,8 +107,8 @@ public class OI {
     buttonA.whileHeld(new LowerPanelGrabber());
     buttonB.whileHeld(new RaisePanelGrabber());
 
-    rightBumper.whileHeld(new ShootBall());
-    leftBumper.whileHeld(new IntakeBall());
+    leftBumper.whileHeld(new ShootBall());
+    rightBumper.whileHeld(new IntakeBall());
 
     upperPOV.whileHeld(new PushPivotForward());
     lowerPOV.whileHeld(new PullPivotBackward());

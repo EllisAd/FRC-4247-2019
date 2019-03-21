@@ -10,7 +10,6 @@ public class PullPivotBackward extends Command {
     }
 
     protected void initialize() {
-        System.out.println("PullPivotBackward initializing");
         Robot.m_pivot.backward();
     }
 

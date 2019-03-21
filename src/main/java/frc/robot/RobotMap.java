@@ -39,8 +39,8 @@ public class RobotMap {
 	public static final int BUTTON_Y = 4;
 	public static final int BUTTON_A = 1;
 	public static final int BUTTON_B = 2;
-	public static final int BUMPER_RIGHT = 5;
-  public static final int BUMPER_LEFT = 6;
+	public static final int BUMPER_LEFT = 5;
+  public static final int BUMPER_RIGHT = 6;
   
   //Triggers
   public static int TRIGGER_RIGHT_PULL = 3;
@@ -59,11 +59,18 @@ public class RobotMap {
   public static final int SHOOTER_CANBUS_PORT = 5;
   public static final int PIVOT_CANBUS_PORT = 6;
 
-  // Sensor ports (TODO Add these!)
-  public static final int PANEL_GRABBER_HIGH_SWITCH_PORT = 0;
-  public static final int PANEL_GRABBER_LOW_SWITCH_PORT = 1;
-  public static final int ELEVATOR_HIGH_SWITCH_PORT = 2;
-  public static final int ELEVATOR_LOW_SWITCH_PORT = 3;
-  public static final int PIVOT_FORWARD_SWITCH_PORT = 4;
-  public static final int PIVOT_BACKWARD_SWITCH_PORT = 5;
+  // Sensor ports
+  public static final int SHOOTER_LIMIT_SWITCH_PORT = 0;
+
+  // TODO Do we use these?
+  public static final int PANEL_GRABBER_HIGH_SWITCH_PORT = 1;
+  public static final int PANEL_GRABBER_LOW_SWITCH_PORT = 2;
+  public static final int ELEVATOR_HIGH_SWITCH_PORT = 3;
+  public static final int ELEVATOR_LOW_SWITCH_PORT = 4;
+  public static final int PIVOT_FORWARD_SWITCH_PORT = 5;
+  public static final int PIVOT_BACKWARD_SWITCH_PORT = 6;
+
+  // Camera ports
+  public static final int FRONT_CAMERA_PORT = 0;
+  public static final int REAR_CAMERA_PORT = 1;
 }

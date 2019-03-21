@@ -10,7 +10,6 @@ public class PushPivotForward extends Command {
     }
 
     protected void initialize() {
-        System.out.println("PushPivotForward initializing");
         Robot.m_pivot.forward();
     }
 

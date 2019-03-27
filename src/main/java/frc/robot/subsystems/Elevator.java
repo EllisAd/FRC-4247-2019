@@ -16,7 +16,8 @@ public class Elevator extends Subsystem {
 
     private static final double DELTA_RATE_LIMIT = 0.02;
 
-    private final TalonSRX motor = new TalonSRX(RobotMap.ELEVATOR_CANBUS_PORT);
+    private final TalonSRX leftMotor = new TalonSRX(RobotMap.ELEVATOR_LEFT_CANBUS_PORT);
+    private final TalonSRX rightMotor = new TalonSRX(RobotMap.ELEVATOR_RIGHT_CANBUS_PORT);
 
     private final DigitalInput raisedSwitch = new DigitalInput(RobotMap.ELEVATOR_HIGH_SWITCH_PORT);
     private final DigitalInput loweredSwitch = new DigitalInput(RobotMap.ELEVATOR_LOW_SWITCH_PORT);
@@ -25,7 +26,9 @@ public class Elevator extends Subsystem {
 
     public void raise(double inputValue) {
         if (!isFullyRaised()) {
-            this.motor.set(ControlMode.PercentOutput, this.mapInputToOutput(inputValue));
+            double output = this.mapInputToOutput(inputValue);
+            this.leftMotor.set(ControlMode.PercentOutput, output);
+            this.rightMotor.set(ControlMode.PercentOutput, output);
         } else {
             stop();
         }
@@ -33,14 +36,17 @@ public class Elevator extends Subsystem {
 
     public void lower(double inputValue) {
         if (!isFullyLowered()) {
-            this.motor.set(ControlMode.PercentOutput, this.mapInputToOutput(-inputValue));
+            double output = this.mapInputToOutput(-inputValue);
+            this.leftMotor.set(ControlMode.PercentOutput, output);
+            this.rightMotor.set(ControlMode.PercentOutput, output);
         } else {
             stop();
         }
     }
 
     public void stop() {
-        this.motor.set(ControlMode.PercentOutput, HOLD_SPEED);
+        this.leftMotor.set(ControlMode.PercentOutput, HOLD_SPEED);
+        this.rightMotor.set(ControlMode.PercentOutput, HOLD_SPEED);
         lastOutputValue = HOLD_SPEED;
     }
 
@@ -65,12 +71,12 @@ public class Elevator extends Subsystem {
     // TODO Set up limit switches!
 	public boolean isFullyRaised() {
         return false;
-		// return raisedSwitch.get();
+		// return !raisedSwitch.get();
     }
     
     public boolean isFullyLowered() {
         return false;
-        // return loweredSwitch.get();
+        // return !loweredSwitch.get();
     }
 
     @Override

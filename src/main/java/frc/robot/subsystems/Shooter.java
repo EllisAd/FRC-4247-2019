@@ -13,24 +13,29 @@ public class Shooter extends Subsystem {
     private static final double INTAKE_SPEED = 1.0;
     private static final double IDLE_SPEED = 0.0;
 
-    private final TalonSRX shooterMotor = new TalonSRX(RobotMap.SHOOTER_CANBUS_PORT);
+    private final TalonSRX shooterLeftMotor = new TalonSRX(RobotMap.SHOOTER_LEFT_CANBUS_PORT);
+    private final TalonSRX shooterRightMotor = new TalonSRX(RobotMap.SHOOTER_RIGHT_CANBUS_PORT);
     private final DigitalInput limitSwitch = new DigitalInput(RobotMap.SHOOTER_LIMIT_SWITCH_PORT);
 
     public void shoot() {
-        shooterMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
+        shooterLeftMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
+        shooterRightMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
     }
 
     public void stop() {
-        shooterMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
+        shooterLeftMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
+        shooterRightMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
     }
 
     public void intake() {
         if (isLimitSwitchPressed()) {
             System.out.println("Ball captured");
-            shooterMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
+            shooterLeftMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
+            shooterRightMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
         } else {
             System.out.println("Intaking ball");
-            shooterMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
+            shooterLeftMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
+            shooterRightMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
         }
     }
 

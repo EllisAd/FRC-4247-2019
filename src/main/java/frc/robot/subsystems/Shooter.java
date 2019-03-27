@@ -19,7 +19,7 @@ public class Shooter extends Subsystem {
 
     public void shoot() {
         shooterLeftMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
-        shooterRightMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
+        shooterRightMotor.set(ControlMode.PercentOutput, -SHOOT_SPEED);
     }
 
     public void stop() {
@@ -35,7 +35,7 @@ public class Shooter extends Subsystem {
         } else {
             System.out.println("Intaking ball");
             shooterLeftMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
-            shooterRightMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
+            shooterRightMotor.set(ControlMode.PercentOutput, -INTAKE_SPEED);
         }
     }
 

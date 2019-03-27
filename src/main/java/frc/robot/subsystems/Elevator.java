@@ -28,7 +28,7 @@ public class Elevator extends Subsystem {
         if (!isFullyRaised()) {
             double output = this.mapInputToOutput(inputValue);
             this.leftMotor.set(ControlMode.PercentOutput, output);
-            this.rightMotor.set(ControlMode.PercentOutput, output);
+            this.rightMotor.set(ControlMode.PercentOutput, -output);
         } else {
             stop();
         }
@@ -38,7 +38,7 @@ public class Elevator extends Subsystem {
         if (!isFullyLowered()) {
             double output = this.mapInputToOutput(-inputValue);
             this.leftMotor.set(ControlMode.PercentOutput, output);
-            this.rightMotor.set(ControlMode.PercentOutput, output);
+            this.rightMotor.set(ControlMode.PercentOutput, -output);
         } else {
             stop();
         }

@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.auto.AutoCommand;
 import frc.robot.commands.drive.TankDrive;
-import frc.robot.subsystems.Cameras;
+import frc.robot.Cameras;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.PanelGrabber;
@@ -34,6 +34,8 @@ public class Robot extends TimedRobot {
   public static PanelGrabber m_panelGrabber = new PanelGrabber();
   public static Pivot m_pivot = new Pivot();
   public static Shooter m_shooter = new Shooter();
+
+  // Not a subsystem!
   public static Cameras m_cameras = new Cameras();
 
   public static OI m_oi;
@@ -48,9 +50,12 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    // TODO Remove autonomous selector!
     m_chooser.setDefaultOption("Default Auto", new AutoCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
+
+    m_cameras.start(320, 240, 15, 320, 240, 15);
   }
 
   /**

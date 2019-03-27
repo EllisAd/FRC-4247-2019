@@ -14,7 +14,6 @@ public class LowerElevator extends Command {
     }
 
     protected void initialize() {
-        System.out.println("LowerElevator initializing");
         Robot.m_elevator.lower(joystickReader.get());
     }
 

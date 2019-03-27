@@ -10,7 +10,6 @@ public class LowerPanelGrabber extends Command {
     }
 
     protected void initialize() {
-        System.out.println("LowerPanelGrabber initializing");
         Robot.m_panelGrabber.lower();
     }
 

@@ -10,7 +10,6 @@ public class RaisePanelGrabber extends Command {
     }
 
     protected void initialize() {
-        System.out.println("RaisePanelGrabber initializing");
         Robot.m_panelGrabber.raise();
     }
 

@@ -1,20 +1,13 @@
-package frc.robot.subsystems;
+package frc.robot;
 
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.cameraserver.CameraServer;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.camera.RunCamera;
 
-public class Cameras extends Subsystem {
+public class Cameras {
 
     private UsbCamera frontCamera;
     private UsbCamera rearCamera;
-
-    @Override
-    protected void initDefaultCommand() {
-        setDefaultCommand(new RunCamera());
-    }
 
 	public void start(int frontWidth, int frontHeight, int frontFps, int rearWidth, int rearHeight, int rearFps) {
         this.frontCamera = CameraServer.getInstance().startAutomaticCapture(RobotMap.FRONT_CAMERA_PORT);

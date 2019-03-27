@@ -18,8 +18,8 @@ public class Shooter extends Subsystem {
     private final DigitalInput limitSwitch = new DigitalInput(RobotMap.SHOOTER_LIMIT_SWITCH_PORT);
 
     public void shoot() {
-        shooterLeftMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
-        shooterRightMotor.set(ControlMode.PercentOutput, -SHOOT_SPEED);
+        shooterLeftMotor.set(ControlMode.PercentOutput, -SHOOT_SPEED);
+        shooterRightMotor.set(ControlMode.PercentOutput, SHOOT_SPEED);
     }
 
     public void stop() {
@@ -29,13 +29,11 @@ public class Shooter extends Subsystem {
 
     public void intake() {
         if (isLimitSwitchPressed()) {
-            System.out.println("Ball captured");
             shooterLeftMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
             shooterRightMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
         } else {
-            System.out.println("Intaking ball");
-            shooterLeftMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
-            shooterRightMotor.set(ControlMode.PercentOutput, -INTAKE_SPEED);
+            shooterLeftMotor.set(ControlMode.PercentOutput, -INTAKE_SPEED);
+            shooterRightMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);
         }
     }
 

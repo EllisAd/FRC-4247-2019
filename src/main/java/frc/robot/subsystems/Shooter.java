@@ -11,6 +11,7 @@ public class Shooter extends Subsystem {
 
     private static final double SHOOT_SPEED = -1.0;
     private static final double INTAKE_SPEED = 0.6;
+    private static final double HOLD_SPEED = 0.3;
     private static final double IDLE_SPEED = 0.0;
 
     private final TalonSRX shooterLeftMotor = new TalonSRX(RobotMap.SHOOTER_LEFT_CANBUS_PORT);
@@ -29,8 +30,8 @@ public class Shooter extends Subsystem {
 
     public void intake() {
         if (isLimitSwitchPressed()) {
-            shooterLeftMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
-            shooterRightMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
+            shooterLeftMotor.set(ControlMode.PercentOutput, -HOLD_SPEED);
+            shooterRightMotor.set(ControlMode.PercentOutput, HOLD_SPEED);
         } else {
             shooterLeftMotor.set(ControlMode.PercentOutput, -INTAKE_SPEED);
             shooterRightMotor.set(ControlMode.PercentOutput, INTAKE_SPEED);

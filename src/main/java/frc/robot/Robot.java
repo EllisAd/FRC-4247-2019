@@ -55,7 +55,7 @@ public class Robot extends TimedRobot {
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
 
-    m_cameras.start(320, 240, 15, 320, 240, 15);
+    m_cameras.start(320, 240, 10, 320, 240, 8);
   }
 
   /**

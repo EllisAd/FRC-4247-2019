@@ -9,9 +9,9 @@ import frc.robot.RobotMap;
 
 public class Shooter extends Subsystem {
 
-    private static final double SHOOT_SPEED = -1.0;
-    private static final double INTAKE_SPEED = 0.6;
-    private static final double HOLD_SPEED = 0.3;
+    private static final double SHOOT_SPEED = 1.0;
+    private static final double INTAKE_SPEED = -1.0;
+    private static final double HOLD_SPEED = -0.3;
     private static final double IDLE_SPEED = 0.0;
 
     private final TalonSRX shooterLeftMotor = new TalonSRX(RobotMap.SHOOTER_LEFT_CANBUS_PORT);
@@ -24,7 +24,7 @@ public class Shooter extends Subsystem {
     }
 
     public void stop() {
-        shooterLeftMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
+        shooterLeftMotor.set(ControlMode.PercentOutput, -IDLE_SPEED);
         shooterRightMotor.set(ControlMode.PercentOutput, IDLE_SPEED);
     }
 

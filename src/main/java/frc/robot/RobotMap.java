@@ -39,8 +39,8 @@ public class RobotMap {
 	public static final int BUTTON_Y = 4;
 	public static final int BUTTON_A = 1;
 	public static final int BUTTON_B = 2;
-	public static final int BUMPER_LEFT = 5;
-  public static final int BUMPER_RIGHT = 6;
+	public static final int BUMPER_LEFT = 6;
+  public static final int BUMPER_RIGHT = 5;
   
   //Triggers
   public static int TRIGGER_RIGHT_PULL = 3;

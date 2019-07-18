@@ -10,8 +10,8 @@ import frc.robot.RobotMap;
 
 public class PanelGrabber extends Subsystem {
 
-    private static final double RAISE_SPEED = -0.6;
-    private static final double LOWER_SPEED = 0.6;
+    private static final double LOWER_SPEED = -0.5;
+    private static final double RAISE_SPEED = 0.6;
     private static final double IDLE_SPEED = 0.0;
 
     private final TalonSRX motor = new TalonSRX(RobotMap.PANEL_GRABBER_CANBUS_PORT);

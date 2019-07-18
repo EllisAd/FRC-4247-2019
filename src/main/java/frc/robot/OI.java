@@ -104,8 +104,8 @@ public class OI {
     // buttonB.whenReleased(new RaisePanelGrabber());
 
     // Until then, we manually position the grabber
-    buttonA.whileHeld(new LowerPanelGrabber());
-    buttonB.whileHeld(new RaisePanelGrabber());
+    buttonA.whileHeld(new RaisePanelGrabber());
+    buttonB.whileHeld(new LowerPanelGrabber());
 
     leftBumper.whileHeld(new ShootBall());
     rightBumper.whileHeld(new IntakeBall());

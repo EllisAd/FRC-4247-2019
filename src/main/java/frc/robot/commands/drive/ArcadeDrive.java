@@ -18,13 +18,15 @@ public class ArcadeDrive extends Command {
 	}
 
 	protected void execute() {
+		// TODO Take the joystick values from the commanding controller!
+
 		// Driving forwards for the shooter
-        double y = Robot.m_oi.getLeftJoyY();
-		double x = Robot.m_oi.getLeftJoyX();
+        double y = Robot.m_oi.leftController.getLeftJoyY();
+		double x = Robot.m_oi.leftController.getLeftJoyX();
 		
 		// Driving backwards for the panel grabber
-		double yFine = Robot.m_oi.getRightJoyY() * FINE_Y_AMOUNT;
-		double xFine = Robot.m_oi.getRightJoyX() * FINE_X_AMOUNT;
+		double yFine = Robot.m_oi.leftController.getRightJoyY() * FINE_Y_AMOUNT;
+		double xFine = Robot.m_oi.leftController.getRightJoyX() * FINE_X_AMOUNT;
 
 		// Translate to motor outputs
         double left = Utils.clamp(x + xFine - y + yFine, -1.0, 1.0);

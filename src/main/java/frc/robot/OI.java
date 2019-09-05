@@ -7,9 +7,6 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.manipulator.IntakeBall;
 import frc.robot.commands.manipulator.LowerElevator;
 import frc.robot.commands.manipulator.LowerPanelGrabber;
@@ -19,8 +16,6 @@ import frc.robot.commands.manipulator.RaiseElevator;
 import frc.robot.commands.manipulator.RaisePanelGrabber;
 import frc.robot.commands.manipulator.ShootBall;
 import frc.robot.subsystems.helpers.LogitechController;
-import frc.robot.subsystems.helpers.JoystickAnalogTrigger;
-import frc.robot.subsystems.helpers.JoystickPOV;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -36,8 +31,8 @@ public class OI {
   // Button button = new JoystickButton(stick, buttonNumber);
 
 
-  private final LogitechController leftController = new LogitechController(RobotMap.LEFT_JOYSTICK);
-  private final LogitechController rightController = new LogitechController(RobotMap.RIGHT_JOYSTICK);
+  public final LogitechController leftController = new LogitechController(RobotMap.LEFT_JOYSTICK);
+  public final LogitechController rightController = new LogitechController(RobotMap.RIGHT_JOYSTICK);
 
   //Buttons on Commands
   public OI () {

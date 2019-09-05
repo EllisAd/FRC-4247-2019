@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.auto.AutoCommand;
-import frc.robot.commands.drive.TankDrive;
 import frc.robot.Cameras;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Elevator;

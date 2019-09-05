@@ -24,10 +24,9 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-
-
   // Joysticks
-  public static int JOYSTICK = 0;
+  public static int LEFT_JOYSTICK = 0;
+  public static int RIGHT_JOYSTICK = 1;
 
   public static int JOYSTICK_LEFT_SIDE_AXIS = 0;
   public static int JOYSTICK_LEFT_UP_AXIS = 1;
@@ -41,6 +40,8 @@ public class RobotMap {
 	public static final int BUTTON_B = 2;
 	public static final int BUMPER_LEFT = 6;
   public static final int BUMPER_RIGHT = 5;
+  public static final int BUTTON_START = 8;
+  public static final int BUTTON_BACK = 7;
   
   //Triggers
   public static int TRIGGER_RIGHT_PULL = 3;
@@ -49,7 +50,13 @@ public class RobotMap {
   //POVs
   public static final int DPAD = 0;
   public static final int DPAD_UP = 0;
+  public static final int DPAD_UP_RIGHT = 45;
+  public static final int DPAD_RIGHT = 90;
+  public static final int DPAD_DOWN_RIGHT = 135;
   public static final int DPAD_DOWN = 180;
+  public static final int DPAD_DOWN_LEFT = 225;
+  public static final int DPAD_LEFT = 270;
+  public static final int DPAD_UP_LEFT = 315;
 
   // Motor ports
   public static final int LEFT_MOTOR_CANBUS_PORT = 1;

@@ -18,6 +18,7 @@ import frc.robot.commands.manipulator.PushPivotForward;
 import frc.robot.commands.manipulator.RaiseElevator;
 import frc.robot.commands.manipulator.RaisePanelGrabber;
 import frc.robot.commands.manipulator.ShootBall;
+import frc.robot.subsystems.helpers.LogitechController;
 import frc.robot.subsystems.helpers.JoystickAnalogTrigger;
 import frc.robot.subsystems.helpers.JoystickPOV;
 
@@ -34,86 +35,51 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  //Joystick Setup
-  private final Joystick joystick = new Joystick(RobotMap.JOYSTICK);
 
-  //Button Setup
-  // private final Button buttonX = new JoystickButton(joystick, RobotMap.BUTTON_X);
-  // private final Button buttonY = new JoystickButton(joystick, RobotMap.BUTTON_Y);
-  private final Button buttonA = new JoystickButton(joystick, RobotMap.BUTTON_A);
-  private final Button buttonB = new JoystickButton(joystick, RobotMap.BUTTON_B);
-  private final Button leftBumper = new JoystickButton(joystick, RobotMap.BUMPER_LEFT);
-  private final Button rightBumper = new JoystickButton(joystick, RobotMap.BUMPER_RIGHT);
-  private final Button rightTrigger = new JoystickAnalogTrigger(joystick, RobotMap.TRIGGER_RIGHT_PULL, 0.1, 1.0);
-  private final Button leftTrigger = new JoystickAnalogTrigger(joystick, RobotMap.TRIGGER_LEFT_PULL, 0.1, 1.0);
-
-  //POV Setup
-  private final Button upperPOV = new JoystickPOV(joystick, RobotMap.DPAD, RobotMap.DPAD_UP);
-  private final Button lowerPOV = new JoystickPOV(joystick, RobotMap.DPAD, RobotMap.DPAD_DOWN);
-
-  // There are a few additional built in buttons you can use. Additionally,
-  // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
-
-  //// TRIGGERING COMMANDS WITH BUTTONS
-  // Once you have a button, it's trivial to bind it to a button in one of
-  // three ways:
-
-  // Start the command when the button is pressed and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
-
-  // Run the command while the button is being held down and interrupt it once
-  // the button is released.
-  // button.whileHeld(new ExampleCommand());
-
-  // Start the command when the button is released and let it run the command
-  // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ExampleCommand());
-
-  // Joystick Control
-
-  public double getLeftJoyY() {
-    return joystick.getRawAxis(RobotMap.JOYSTICK_LEFT_UP_AXIS);
-  }
-
-  public double getLeftJoyX() {
-    return joystick.getRawAxis(RobotMap.JOYSTICK_LEFT_SIDE_AXIS);
-  }
-
-  public double getRightJoyY() {
-    return joystick.getRawAxis(RobotMap.JOYSTICK_RIGHT_UP_AXIS);
-  }
-
-  public double getRightJoyX() {
-    return joystick.getRawAxis(RobotMap.JOYSTICK_RIGHT_SIDE_AXIS);
-  }
-
-  public double getLeftTrigger() {
-    return joystick.getRawAxis(RobotMap.TRIGGER_LEFT_PULL);
-  }
-
-  public double getRightTrigger() {
-    return joystick.getRawAxis(RobotMap.TRIGGER_RIGHT_PULL);
-  }
+  private final LogitechController leftController = new LogitechController(RobotMap.LEFT_JOYSTICK);
+  private final LogitechController rightController = new LogitechController(RobotMap.RIGHT_JOYSTICK);
 
   //Buttons on Commands
   public OI () {
+
+    // There are a few additional built in buttons you can use. Additionally,
+    // by subclassing Button you can create custom triggers and bind those to
+    // commands the same as any other Button.
+
+    //// TRIGGERING COMMANDS WITH BUTTONS
+    // Once you have a button, it's trivial to bind it to a button in one of
+    // three ways:
+
+    // Start the command when the button is pressed and let it run the command
+    // until it is finished as determined by it's isFinished method.
+    // button.whenPressed(new ExampleCommand());
+
+    // Run the command while the button is being held down and interrupt it once
+    // the button is released.
+    // button.whileHeld(new ExampleCommand());
+
+    // Start the command when the button is released and let it run the command
+    // until it is finished as determined by it's isFinished method.
+    // button.whenReleased(new ExampleCommand());
+
     // Once we have limit switches for this, we can use these hooks
     // buttonB.whileHeld(new LowerPanelGrabber());
     // buttonB.whenReleased(new RaisePanelGrabber());
 
     // Until then, we manually position the grabber
-    buttonA.whileHeld(new RaisePanelGrabber());
-    buttonB.whileHeld(new LowerPanelGrabber());
 
-    leftBumper.whileHeld(new ShootBall());
-    rightBumper.whileHeld(new IntakeBall());
+    leftController.buttonA.whileHeld(new RaisePanelGrabber());
+    leftController.buttonB.whileHeld(new LowerPanelGrabber());
 
-    upperPOV.whileHeld(new PushPivotForward());
-    lowerPOV.whileHeld(new PullPivotBackward());
+    leftController.leftBumper.whileHeld(new ShootBall());
+    leftController.rightBumper.whileHeld(new IntakeBall());
 
-    rightTrigger.whileHeld(new RaiseElevator(this::getRightTrigger));
-    leftTrigger.whileHeld(new LowerElevator(this::getLeftTrigger));
+    leftController.dpadUp.whileHeld(new PushPivotForward());
+    leftController.dpadDown.whileHeld(new PullPivotBackward());
+
+    leftController.rightTrigger.whileHeld(new RaiseElevator(leftController::getRightTrigger));
+    leftController.leftTrigger.whileHeld(new LowerElevator(leftController::getLeftTrigger));
+
+    // TODO Add system to bind dependent on whether two controllers are connected!
   }
 }

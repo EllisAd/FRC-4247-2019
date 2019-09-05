@@ -9,7 +9,7 @@ public class ArcadeDrive extends Command {
 	private static final double FINE_X_AMOUNT = 0.5;
 	private static final double FINE_Y_AMOUNT = 0.5;
 
-	private static final double FAST_X_AMOUNT = 0.5;
+	private static final double FAST_X_AMOUNT = 0.75;
 	private static final double FAST_Y_AMOUNT = 0.5;
 
 	public ArcadeDrive() {
